@@ -1,17 +1,23 @@
-//: Playground - noun: a place where people can play
+// Swift: Syntax Cheat Codes
+// ↑ ↑ ↓ ↓ ← → ← → B A
+//
+// Author: Andyy Hope
+// Twitter: @andyyhope
+// Medium: medium.com/@andyyhope
+
 
 import UIKit
 
-
 // MARK: - Closure
 
-UIView.animateWithDuration(3, animations: {
+UIView.animate(withDuration: 3, animations: {
     // This is a closure in an argument
 })
 
+
 // MARK: - Trailing Closure
 
-UIView.animateWithDuration(3) { 
+UIView.animate(withDuration: 3) {
     // This is a trailing closure
     // It's the same API call as the one above
 }
@@ -28,7 +34,6 @@ func doSomething(something: () -> Void) {
 //let usedClosure = closure()
 //doSomething(usedClosure)
 
-
 // MARK: - Type Alias
 
 typealias TripleThreat = (Int, String, Double) -> (Int, String, Double)
@@ -38,6 +43,7 @@ typealias TripleThreat = (Int, String, Double) -> (Int, String, Double)
 func _dance(dance: (Int, String, Double) -> (Int, String, Double)) { }
 func _sing(sing: (Int, String, Double) -> (Int, String, Double)) { }
 func _act(act: (Int, String, Double) -> (Int, String, Double)) { }
+
 
 // With typealias
 
@@ -50,13 +56,13 @@ func sing(sing: TripleThreat) { }
 
 // MARK: - Shorthand Argument Names
 
-func say(message: String, completion: (goodbye: String) -> Void) {
+func say(_ message: String, completion: (_ goodbye: String) -> Void) {
     print(message)
-    completion(goodbye: "Goodbye")
+    completion("Goodbye")
 }
-    
+
 say("Hi") { (goodbye: String) -> Void in
-        print(goodbye)
+    print(goodbye)
 }
 
 // prints: "Hi"
